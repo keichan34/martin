@@ -21,6 +21,9 @@ use crate::{MbtError, Mbtiles, AGG_TILES_HASH, AGG_TILES_HASH_IN_DIFF};
 #[derive(PartialEq, Eq, Default, Debug, Clone, EnumDisplay)]
 #[enum_display(case = "Kebab")]
 #[cfg_attr(feature = "cli", derive(ValueEnum))]
+#[deprecated(
+    note = "Crate `martin-mbtiles` was renamed to `mbtiles`. Please update your Cargo.toml"
+)]
 pub enum CopyDuplicateMode {
     #[default]
     Override,
@@ -30,6 +33,9 @@ pub enum CopyDuplicateMode {
 
 #[derive(Clone, Default, PartialEq, Eq, Debug)]
 #[cfg_attr(feature = "cli", derive(Args))]
+#[deprecated(
+    note = "Crate `martin-mbtiles` was renamed to `mbtiles`. Please update your Cargo.toml"
+)]
 pub struct MbtilesCopier {
     /// MBTiles file to read from
     pub src_file: PathBuf,
@@ -107,6 +113,9 @@ struct MbtileCopierInt {
 
 impl MbtilesCopier {
     #[must_use]
+    #[deprecated(
+        note = "Crate `martin-mbtiles` was renamed to `mbtiles`. Please update your Cargo.toml"
+    )]
     pub fn new(src_filepath: PathBuf, dst_filepath: PathBuf) -> Self {
         Self {
             src_file: src_filepath,

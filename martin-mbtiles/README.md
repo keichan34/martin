@@ -7,6 +7,10 @@
 [![crates.io version](https://img.shields.io/crates/v/martin-mbtiles.svg)](https://crates.io/crates/martin-mbtiles)
 [![CI build](https://github.com/maplibre/martin/workflows/CI/badge.svg)](https://github.com/maplibre/martin-mbtiles/actions)
 
+# DEPRECATED
+This crate was renamed to [mbtiles](https://crates.io/crates/mbtiles)
+
+### Intro
 A library to help tile servers like [Martin](https://maplibre.org/martin) work with [MBTiles](https://github.com/mapbox/mbtiles-spec) files. When using as a lib, you may want to disable default features (i.e. the unused "cli" feature).
 
 This crate also has a small utility that allows users to interact with the `*.mbtiles` files from the command line.  See [tools](https://maplibre.org/martin/50-tools.html) documentation for more information.

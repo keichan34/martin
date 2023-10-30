@@ -30,6 +30,9 @@ use crate::MbtError::{
 };
 
 #[derive(Clone, Debug, PartialEq, Serialize)]
+#[deprecated(
+    note = "Crate `martin-mbtiles` was renamed to `mbtiles`. Please update your Cargo.toml"
+)]
 pub struct Metadata {
     pub id: String,
     #[serde(serialize_with = "serialize_ti")]
@@ -101,6 +104,9 @@ pub enum IntegrityCheckType {
 }
 
 #[derive(Clone, Debug)]
+#[deprecated(
+    note = "Crate `martin-mbtiles` was renamed to `mbtiles`. Please update your Cargo.toml"
+)]
 pub struct Mbtiles {
     filepath: String,
     filename: String,

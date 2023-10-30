@@ -6,12 +6,18 @@ use crate::errors::MbtResult;
 use crate::{Mbtiles, Metadata};
 
 #[derive(Clone, Debug)]
+#[deprecated(
+    note = "Crate `martin-mbtiles` was renamed to `mbtiles`. Please update your Cargo.toml"
+)]
 pub struct MbtilesPool {
     mbtiles: Mbtiles,
     pool: Pool<Sqlite>,
 }
 
 impl MbtilesPool {
+    #[deprecated(
+        note = "Crate `martin-mbtiles` was renamed to `mbtiles`. Please update your Cargo.toml"
+    )]
     pub async fn new<P: AsRef<Path>>(filepath: P) -> MbtResult<Self> {
         let mbtiles = Mbtiles::new(filepath)?;
         let pool = SqlitePool::connect(mbtiles.filepath()).await?;

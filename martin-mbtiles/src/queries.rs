@@ -4,6 +4,9 @@ use sqlx::{query, Executor as _, SqliteExecutor};
 use crate::errors::MbtResult;
 
 /// Returns true if the database is empty (no tables/indexes/...)
+#[deprecated(
+    note = "Crate `martin-mbtiles` was renamed to `mbtiles`. Please update your Cargo.toml"
+)]
 pub async fn is_empty_database<T>(conn: &mut T) -> MbtResult<bool>
 where
     for<'e> &'e mut T: SqliteExecutor<'e>,
@@ -14,6 +17,9 @@ where
         .is_none())
 }
 
+#[deprecated(
+    note = "Crate `martin-mbtiles` was renamed to `mbtiles`. Please update your Cargo.toml"
+)]
 pub async fn is_normalized_tables_type<T>(conn: &mut T) -> MbtResult<bool>
 where
     for<'e> &'e mut T: SqliteExecutor<'e>,
@@ -65,6 +71,9 @@ where
 }
 
 /// Check if MBTiles has a table or a view named 'tiles_with_hash' with needed fields
+#[deprecated(
+    note = "Crate `martin-mbtiles` was renamed to `mbtiles`. Please update your Cargo.toml"
+)]
 pub async fn has_tiles_with_hash<T>(conn: &mut T) -> MbtResult<bool>
 where
     for<'e> &'e mut T: SqliteExecutor<'e>,
@@ -93,6 +102,9 @@ where
         == 1)
 }
 
+#[deprecated(
+    note = "Crate `martin-mbtiles` was renamed to `mbtiles`. Please update your Cargo.toml"
+)]
 pub async fn is_flat_with_hash_tables_type<T>(conn: &mut T) -> MbtResult<bool>
 where
     for<'e> &'e mut T: SqliteExecutor<'e>,
@@ -113,6 +125,9 @@ where
     Ok(is_valid.unwrap_or_default() == 1 && has_tiles_with_hash(&mut *conn).await?)
 }
 
+#[deprecated(
+    note = "Crate `martin-mbtiles` was renamed to `mbtiles`. Please update your Cargo.toml"
+)]
 pub async fn is_flat_tables_type<T>(conn: &mut T) -> MbtResult<bool>
 where
     for<'e> &'e mut T: SqliteExecutor<'e>,
@@ -147,6 +162,9 @@ where
         == 1)
 }
 
+#[deprecated(
+    note = "Crate `martin-mbtiles` was renamed to `mbtiles`. Please update your Cargo.toml"
+)]
 pub async fn create_metadata_table<T>(conn: &mut T) -> MbtResult<()>
 where
     for<'e> &'e mut T: SqliteExecutor<'e>,
@@ -162,6 +180,9 @@ where
     Ok(())
 }
 
+#[deprecated(
+    note = "Crate `martin-mbtiles` was renamed to `mbtiles`. Please update your Cargo.toml"
+)]
 pub async fn create_flat_tables<T>(conn: &mut T) -> MbtResult<()>
 where
     for<'e> &'e mut T: SqliteExecutor<'e>,
@@ -182,6 +203,9 @@ where
     Ok(())
 }
 
+#[deprecated(
+    note = "Crate `martin-mbtiles` was renamed to `mbtiles`. Please update your Cargo.toml"
+)]
 pub async fn create_flat_with_hash_tables<T>(conn: &mut T) -> MbtResult<()>
 where
     for<'e> &'e mut T: SqliteExecutor<'e>,
@@ -210,6 +234,9 @@ where
     Ok(())
 }
 
+#[deprecated(
+    note = "Crate `martin-mbtiles` was renamed to `mbtiles`. Please update your Cargo.toml"
+)]
 pub async fn create_normalized_tables<T>(conn: &mut T) -> MbtResult<()>
 where
     for<'e> &'e mut T: SqliteExecutor<'e>,
@@ -250,6 +277,9 @@ where
     Ok(())
 }
 
+#[deprecated(
+    note = "Crate `martin-mbtiles` was renamed to `mbtiles`. Please update your Cargo.toml"
+)]
 pub async fn create_tiles_with_hash_view<T>(conn: &mut T) -> MbtResult<()>
 where
     for<'e> &'e mut T: SqliteExecutor<'e>,
@@ -271,6 +301,9 @@ where
     Ok(())
 }
 
+#[deprecated(
+    note = "Crate `martin-mbtiles` was renamed to `mbtiles`. Please update your Cargo.toml"
+)]
 pub async fn detach_db<T>(conn: &mut T, name: &str) -> MbtResult<()>
 where
     for<'e> &'e mut T: SqliteExecutor<'e>,

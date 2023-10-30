@@ -7,6 +7,9 @@ use crate::queries::detach_db;
 use crate::MbtType::{Flat, FlatWithHash, Normalized};
 use crate::{MbtResult, Mbtiles, AGG_TILES_HASH, AGG_TILES_HASH_IN_DIFF};
 
+#[deprecated(
+    note = "Crate `martin-mbtiles` was renamed to `mbtiles`. Please update your Cargo.toml"
+)]
 pub async fn apply_patch(src_file: PathBuf, patch_file: PathBuf) -> MbtResult<()> {
     let src_mbt = Mbtiles::new(src_file)?;
     let patch_mbt = Mbtiles::new(patch_file)?;

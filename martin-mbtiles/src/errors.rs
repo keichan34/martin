@@ -6,6 +6,9 @@ use sqlite_hashes::rusqlite;
 use crate::MbtType;
 
 #[derive(thiserror::Error, Debug)]
+#[deprecated(
+    note = "Crate `martin-mbtiles` was renamed to `mbtiles`. Please update your Cargo.toml"
+)]
 pub enum MbtError {
     #[error("The source and destination MBTiles files are the same: {}", .0.display())]
     SameSourceAndDestination(PathBuf),
